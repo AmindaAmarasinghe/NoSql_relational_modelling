@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.library_app;
+package com.mycompany.library_app.frontend;
 
 /**
  *
  * @author wasu
  */
-public class Monthly_History_Loan extends javax.swing.JFrame {
+public class Borrow_Result extends javax.swing.JFrame {
 
     /**
-     * Creates new form Monthly_History_Loan
+     * Creates new form Borrow_Result
      */
-    public Monthly_History_Loan() {
+    public Borrow_Result() {
         initComponents();
     }
 
@@ -26,40 +26,57 @@ public class Monthly_History_Loan extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btn_close_hist = new javax.swing.JButton();
+        btn_okay = new javax.swing.JButton();
+        lbl_result = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btn_close_hist.setText("Close");
-        btn_close_hist.addActionListener(new java.awt.event.ActionListener() {
+        btn_okay.setBackground(new java.awt.Color(102, 204, 255));
+        btn_okay.setText("OK");
+        btn_okay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_close_histActionPerformed(evt);
+                btn_okayActionPerformed(evt);
             }
         });
+
+        lbl_result.setText("                          ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(168, Short.MAX_VALUE)
-                .addComponent(btn_close_hist)
-                .addGap(160, 160, 160))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(162, 162, 162)
+                .addComponent(btn_okay)
+                .addContainerGap(166, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lbl_result)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(229, Short.MAX_VALUE)
-                .addComponent(btn_close_hist)
-                .addGap(47, 47, 47))
+                .addContainerGap(191, Short.MAX_VALUE)
+                .addComponent(btn_okay)
+                .addGap(85, 85, 85))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lbl_result)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_close_histActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_close_histActionPerformed
-            this.setVisible(false);        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_close_histActionPerformed
+    private void btn_okayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_okayActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        Main_GUI gui = new Main_GUI();
+        gui.setVisible(true);
+    }//GEN-LAST:event_btn_okayActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,25 +95,26 @@ public class Monthly_History_Loan extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Monthly_History_Loan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Borrow_Result.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Monthly_History_Loan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Borrow_Result.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Monthly_History_Loan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Borrow_Result.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Monthly_History_Loan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Borrow_Result.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Monthly_History_Loan().setVisible(true);
+                new Borrow_Result().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_close_hist;
+    private javax.swing.JButton btn_okay;
+    private javax.swing.JLabel lbl_result;
     // End of variables declaration//GEN-END:variables
 }

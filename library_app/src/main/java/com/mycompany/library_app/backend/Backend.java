@@ -1,8 +1,8 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
-package com.mycompany.library_app;
+package com.mycompany.library_app.backend;
 import static com.mongodb.client.model.Filters.eq;
 import com.mongodb.MongoException;
 import com.mongodb.client.MongoClient;
@@ -18,8 +18,7 @@ import org.bson.types.ObjectId;
  *
  * @author wasu
  */
-public class Library_app {
-
+public class Backend {
     public static void main(String[] args) {
         MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
        // Create a MongoDB database
@@ -39,7 +38,17 @@ public class Library_app {
             } catch (MongoException me) {
                 System.err.println("Unable to insert due to an error: " + me);
             }
-        Main_GUI gui = new Main_GUI();
-        gui.setVisible(true);
+    }
+    public void BorrowAct(int regno, int book_id){
+        Borrow b = new Borrow(regno,book_id);
+        b.setBorrowed();
+    }
+    public void ReturnAct(int regno, int book_id){
+        Borrow b = new Borrow(regno,book_id);
+        b.setReturned();
+    }
+    public void payAct(int regno, int amount){
+        Student std = new Student(regno);
+        std.pay_fine(amount);
     }
 }

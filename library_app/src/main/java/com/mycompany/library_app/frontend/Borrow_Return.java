@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.library_app;
+package com.mycompany.library_app.frontend;
+import com.mycompany.library_app.backend.Backend;
 /*
  *
  * @author wasu
@@ -12,6 +13,8 @@ public class Borrow_Return extends javax.swing.JFrame {
     /**
      * Creates new form Student
      */
+    int book_id;
+    int reg_no;
     public Borrow_Return() {
         initComponents();
     }
@@ -160,14 +163,23 @@ public class Borrow_Return extends javax.swing.JFrame {
 
     private void btn_returnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_returnActionPerformed
         // TODO add your handling code here:
+        this.reg_no  = Integer.parseInt(txt_reg_no.getText());
+        this.book_id = Integer.parseInt(txt_book_id.getText());
+        this.setVisible(false);
+        Backend back = new Backend();
+        back.ReturnAct(reg_no, book_id);
+        Return_Result rr = new Return_Result();
+        rr.setVisible(true);
     }//GEN-LAST:event_btn_returnActionPerformed
 
     private void txt_book_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_book_idActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txt_book_idActionPerformed
 
     private void txt_reg_noActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_reg_noActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txt_reg_noActionPerformed
 
     private void btn_borrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrowActionPerformed
@@ -175,7 +187,13 @@ public class Borrow_Return extends javax.swing.JFrame {
         //set status of the book related to book_id false
         //set status of the student related to the student_id true
         //display the date, the book should be returned
+        this.reg_no  = Integer.parseInt(txt_reg_no.getText());
+        this.book_id = Integer.parseInt(txt_book_id.getText());
+        this.setVisible(false);
+        Backend back = new Backend();
+        back.BorrowAct(reg_no, book_id);
         Borrow_Result br = new Borrow_Result();
+        br.setVisible(true);
     }//GEN-LAST:event_btn_borrowActionPerformed
 
     private void btn_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelActionPerformed
